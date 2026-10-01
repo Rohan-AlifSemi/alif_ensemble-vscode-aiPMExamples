@@ -15,6 +15,10 @@ solution:
     - pack: ARM::CMSIS-Compiler@^2.0.0
     - pack: ARM::CMSIS@^6.0.0
 
+  variables:
+    - DeviceLayer: $SolutionDir()$/device/device.clayer.yml
+    - DriverLayer: $SolutionDir()$/libs/soc/soc.clayer.yml
+
   target-types:
     - type: E7-HE
       device: Alif Semiconductor::AE722F80F55D5LS:M55_HE

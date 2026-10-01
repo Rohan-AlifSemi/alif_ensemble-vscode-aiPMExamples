@@ -5,6 +5,8 @@ tmp/
 *.cbuild.yml
 *.clangd
 .clang-format
+.claude/
+.cmsis/
 .cortex-debug.registers.state.json
 c_cpp_properties.json
 cmsis.json

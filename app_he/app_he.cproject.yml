@@ -5,6 +5,11 @@ project:
       files:
         - file: main.c
         - file: get_int_input.c
+        - file: ../app_common/go_modes.c
+        - file: ../app_common/ready_modes.c
+        - file: ../app_common/idle_modes.c
+        - file: ../app_common/standby_modes.c
+        - file: ../app_common/stop_modes.c
 
   add-path:
     - ../app_common
@@ -15,13 +20,6 @@ project:
       - elf
       - bin
 
-  # linker:
-  #   - script: "../device/ensemble/RTE/Device/$Dname$_$Pname$/linker_gnu_tcm.ld.src"
-
   layers:
-    - layer: ../device/ensemble/alif-ensemble.clayer.yml
-    - layer: ../device/ensemble/alif-stdio.clayer.yml
-
-  packs:
-    - pack: AlifSemiconductor::Ensemble@2.2.0
-    - pack: ARM::CMSIS@^6.0.0
+    - layer: $DeviceLayer$
+    - layer: $DriverLayer$

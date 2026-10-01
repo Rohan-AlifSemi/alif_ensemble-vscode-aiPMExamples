@@ -6,6 +6,10 @@ default:
         - -std=c99
         - -fdata-sections
         - -ffunction-sections
+        - -fshort-enums
+        - -funsigned-char
+        - -Wall
+        - -Wextra
 
       Link:
         - --specs=nosys.specs
@@ -35,7 +39,11 @@ default:
       C:
         - -std=c99
         - -fdata-sections
-        - -Wno-license-management
+        - -fshort-enums
+        - -funsigned-char
+        - -Wall
+        - -Wextra
+
       Link:
         - --entry=Reset_Handler
         - --map

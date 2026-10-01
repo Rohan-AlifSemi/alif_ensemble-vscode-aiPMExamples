@@ -1,0 +1,33 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Open-CMSIS-Pack/devtools/tools/projmgr/2.12.0/tools/projmgr/schemas/clayer.schema.json
+
+layer:
+  type: Device
+  packs:
+    - pack: ARM::CMSIS@^6.0.0
+    - pack: ARM::CMSIS-Compiler@^2.0.0
+    - pack: AlifSemiconductor::Ensemble@2.2.0
+  components:
+    - component: ARM::CMSIS:CORE
+    - component: ARM::CMSIS-Compiler:CORE
+    - component: ARM::CMSIS-Compiler:STDIN:Custom
+    - component: ARM::CMSIS-Compiler:STDOUT:Custom
+    - component: AlifSemiconductor::CMSIS Driver:USART
+    - component: AlifSemiconductor::Device:Startup
+    - component: AlifSemiconductor::Device:SOC Peripherals:MHU
+    - component: AlifSemiconductor::Device:SOC Peripherals:PINCONF
+    - component: AlifSemiconductor::Services:Retarget IO:STDIN
+    - component: AlifSemiconductor::Services:Retarget IO:STDOUT
+    - component: AlifSemiconductor::Services:Secure Enclave:core&Source
+    - component: AlifSemiconductor::Services:Secure Enclave:Initialization Helper&Source
+    - component: AlifSemiconductor::BSP:Board Config
+    - component: AlifSemiconductor::BSP:DevKit Config&DevKit-e7
+      for-context:
+        - +E7-HE
+        - +E7-HP
+    - component: AlifSemiconductor::BSP:DevKit Config&DevKit-e8
+      for-context:
+        - +E8-HE
+        - +E8-HP
+    - component: AlifSemiconductor::BSP:DevKit Config&DevKit-e1c
+      for-context:
+        - +E1C-HE
