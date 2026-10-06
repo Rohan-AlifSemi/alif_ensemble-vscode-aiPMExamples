@@ -94,7 +94,11 @@ void configure_ready_mode_profiles(uint32_t mode_number,
         runp->cpu_clk_freq = CLOCK_FREQUENCY_76_8_RC_MHZ;
         runp->scaled_clk_freq = SCALED_FREQ_RC_ACTIVE_76_8_MHZ;
 
+#if defined(M55_HP)
+        runp->dcdc_mode = DCDC_MODE_PWM;
+#else
         runp->dcdc_mode = DCDC_MODE_PFM_FORCED;
+#endif
         runp->dcdc_voltage = 775;
 
         runp->power_domains = PD_SSE700_AON_MASK;    /* PD6 SYST is OFF */

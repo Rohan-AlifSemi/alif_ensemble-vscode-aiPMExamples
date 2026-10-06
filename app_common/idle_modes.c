@@ -39,7 +39,11 @@ void configure_idle_mode_profiles(uint32_t mode_number,
         runp->cpu_clk_freq = CLOCK_FREQUENCY_76_8_XO_MHZ;
         runp->scaled_clk_freq = SCALED_FREQ_RC_ACTIVE_38_4_MHZ;
 
+#if defined(M55_HP)
+        runp->dcdc_mode = DCDC_MODE_PWM;
+#else
         runp->dcdc_mode = DCDC_MODE_PFM_FORCED;
+#endif
         runp->dcdc_voltage = 775;
 
         runp->power_domains = PD_SYST_MASK;
@@ -55,7 +59,11 @@ void configure_idle_mode_profiles(uint32_t mode_number,
         runp->cpu_clk_freq = CLOCK_FREQUENCY_76_8_RC_MHZ;
         runp->scaled_clk_freq = SCALED_FREQ_RC_ACTIVE_0_6_MHZ;
 
+#if defined(M55_HP)
+        runp->dcdc_mode = DCDC_MODE_PWM;
+#else
         runp->dcdc_mode = DCDC_MODE_PFM_FORCED;
+#endif
         runp->dcdc_voltage = 775;
 
         runp->power_domains = PD_SYST_MASK;
