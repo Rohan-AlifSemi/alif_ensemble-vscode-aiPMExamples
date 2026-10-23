@@ -100,7 +100,7 @@ void configure_stop_mode_profiles(uint32_t mode_number,
         /* requires external 32k XTAL to be installed */
         runp->aon_clk_src       = CLK_SRC_LFXO;
         offp->aon_clk_src       = CLK_SRC_LFXO;
-        offp->memory_blocks    |= SRAM0_RET_MASK | SRAM1_RET_MASK;
+        offp->memory_blocks    |= SRAM0_1_RET_MASK | SRAM0_2_RET_MASK | SRAM0_3_RET_MASK | SRAM0_4_RET_MASK | SRAM1_RET_MASK;
         offp->memory_blocks    |= SRAM4_1_MASK | SRAM4_2_MASK | SRAM5_1_MASK | SRAM5_2_MASK | BACKUP4K_MASK;
         VBATALL->RTC_CLK_EN    |= VBATALL_RTC_CLK_EN_Msk;
         VBATSEC->VBAT_ANA_REG1 |= VBATSEC_VBAT_ANA_REG1_LPCMP_EN_Msk;
