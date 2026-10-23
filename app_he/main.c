@@ -383,11 +383,13 @@ static void PrintPendingIRQ()
 
 void SERVICES_ret(uint32_t ret)
 {
+    if (ret == 0) return;
     printf("SERVICES function ret = %" PRIu32 "\r\n", ret);
 }
 
 void SERVICES_response(uint32_t response)
 {
+    if (response == 0) return;
     printf("SERVICES function response = %" PRIu32 "\r\n", response);
 }
 
